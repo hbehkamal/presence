@@ -1,21 +1,21 @@
 import * as React from "react";
 import { List, Datagrid, TextField, EmailField } from "react-admin";
+import { DynamicListType } from "../types/DynamicList.type";
 
-interface listInterface {
-  [x: string]: any;
-}
+export const DynamicList = (props: DynamicListType) => {
 
-export const DynamicList = (props: listInterface) => (
-  <List {...props}>
-    <Datagrid rowClick="edit">
-      <TextField source="id" />
-      <TextField source="name" />
-      <TextField source="username" />
-      <EmailField source="email" />
-      <TextField source="address.street" />
-      <TextField source="phone" />
-      <TextField source="website" />
-      <TextField source="company.name" />
-    </Datagrid>
-  </List>
-);
+  return (
+    <List {...props}>
+      <Datagrid rowClick="edit">
+        <TextField source="id" />
+        <TextField source="name" />
+        <TextField source="username" />
+        <EmailField source="email" />
+        <TextField source="address.street" />
+        <TextField source="phone" />
+        <TextField source="website" />
+        <TextField source="company.name" />
+      </Datagrid>
+    </List>
+  );
+};
