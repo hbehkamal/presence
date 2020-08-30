@@ -1,16 +1,17 @@
 import * as React from "react";
-import { Admin, Resource, ListGuesser } from "react-admin";
+import { Admin, Resource } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 
+import { ListComponent } from "./components/list";
 const dataProvider = jsonServerProvider("http://localhost:3001");
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    <Resource name="user" list={ListGuesser} />
-    <Resource name="student" list={ListGuesser} />
-    <Resource name="master" list={ListGuesser} />
-    <Resource name="class" list={ListGuesser} />
-    <Resource name="department" list={ListGuesser} />
-    <Resource name="course" list={ListGuesser} />
+    <Resource name="user" list={ListComponent} />
+    <Resource name="student" list={ListComponent} />
+    <Resource name="master" list={ListComponent} />
+    <Resource name="class" list={ListComponent} />
+    <Resource name="department" list={ListComponent} />
+    <Resource name="course" list={ListComponent} />
   </Admin>
 );
 
