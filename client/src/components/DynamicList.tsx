@@ -5,7 +5,7 @@ interface listInterface {
   [x: string]: any;
 }
 
-export const ListComponent = (props: listInterface) => (
+export const DynamicList = (props: listInterface) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
