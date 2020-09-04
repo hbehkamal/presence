@@ -1,21 +1,33 @@
 import * as React from "react";
-import { List, Datagrid, TextField, EmailField } from "react-admin";
+import { List, Datagrid, TextField } from "react-admin";
 import { DynamicListType } from "../types/DynamicList.type";
+import { connect } from "react-redux";
 
-export const DynamicList = (props: DynamicListType) => {
+import { getFields } from "../core/meta";
+
+const DynamicList = (props: DynamicListType) => {
+  const { resource } = props;
+
+  const fields = getFields(resource);
 
   return (
     <List {...props}>
       <Datagrid rowClick="edit">
-        <TextField source="id" />
-        <TextField source="name" />
-        <TextField source="username" />
-        <EmailField source="email" />
-        <TextField source="address.street" />
-        <TextField source="phone" />
-        <TextField source="website" />
-        <TextField source="company.name" />
+        {fields &&
+          fields.map((field: any) => {
+            return <TextField source={field} />;
+          })}
       </Datagrid>
     </List>
   );
 };
+
+const mapStateToProps = (state: any, props: DynamicListType) => {
+  const { resource } = props;
+  if (!state.admin.resources[resource]) return {};
+  return {
+    data: state.admin.resources[resource].data,
+  };
+};
+
+export default connect(mapStateToProps, null)(DynamicList);

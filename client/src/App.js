@@ -2,7 +2,7 @@ import * as React from "react";
 import { Admin, Resource } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 
-import { DynamicList } from "./components/DynamicList";
+import DynamicList from "./components/DynamicList";
 const dataProvider = jsonServerProvider("http://localhost:3001");
 const App = () => (
   <Admin dataProvider={dataProvider}>
