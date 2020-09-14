@@ -5,7 +5,6 @@ const StudentEdit = (props: any) => {
   return (
     <Edit {...props}>
       <SimpleForm>
-        <TextInput source="id" />
         <TextInput source="user_id" />
         <TextInput source="department_id" />
       </SimpleForm>

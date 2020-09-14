@@ -5,7 +5,6 @@ const Department = (props: any) => {
   return (
     <Edit {...props}>
       <SimpleForm>
-        <TextInput source="id" />
         <TextInput source="name" />
       </SimpleForm>
     </Edit>

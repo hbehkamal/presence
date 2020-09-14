@@ -6,7 +6,6 @@ const StudentCreate = (props: any) => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <TextInput source="id" />
         <TextInput source="user_id" />
         <TextInput source="department_id" />
       </SimpleForm>

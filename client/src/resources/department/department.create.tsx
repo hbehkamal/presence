@@ -6,7 +6,6 @@ const DepartmentCreate = (props: any) => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <TextInput source="id" />
         <TextInput source="name" />
       </SimpleForm>
     </Create>
