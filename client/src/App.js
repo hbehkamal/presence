@@ -13,6 +13,10 @@ import StudentList from "./resources/student/student.list";
 import StudentEdit from "./resources/student/student.edit";
 import StudentCreate from "./resources/student/student.create";
 
+import MasterList from "./resources/master/master.list";
+import MasterEdit from "./resources/master/master.edit";
+import MasterCreate from "./resources/master/master.create";
+
 const dataProvider = jsonServerProvider("http://localhost:3001");
 const App = () => (
   <Admin
@@ -27,8 +31,13 @@ const App = () => (
       edit={StudentEdit}
       create={StudentCreate}
     />
-    {/* <Resource name="master" list={DynamicList} edit={DynamicEdit} />
-    <Resource name="class" list={DynamicList} edit={DynamicEdit} />
+    <Resource
+      name="master"
+      list={MasterList}
+      edit={MasterEdit}
+      create={MasterCreate}
+    />
+    {/* <Resource name="class" list={DynamicList} edit={DynamicEdit} />
     <Resource name="department" list={DynamicList} edit={DynamicEdit} />
     <Resource name="course" list={DynamicList} edit={DynamicEdit} /> */}
   </Admin>
