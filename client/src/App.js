@@ -2,11 +2,12 @@ import * as React from "react";
 import { Admin, Resource } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 
+import Dashboard from "./components/dashboard";
+import authProvider from "./core/authProvider";
+
 import UserList from "./resources/user/user.list";
 import UserEdit from "./resources/user/user.edit";
 import UserCreate from "./resources/user/user.create";
-import Dashboard from "./components/dashboard";
-import authProvider from "./core/authProvider";
 
 const dataProvider = jsonServerProvider("http://localhost:3001");
 const App = () => (
