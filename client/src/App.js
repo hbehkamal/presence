@@ -25,6 +25,10 @@ import ClassList from "./resources/class/class.list";
 import ClassEdit from "./resources/class/class.edit";
 import ClassCreate from "./resources/class/class.create";
 
+import CourseList from "./resources/course/course.list";
+import CourseEdit from "./resources/course/course.edit";
+import CourseCreate from "./resources/course/course.create";
+
 const dataProvider = jsonServerProvider("http://localhost:3001");
 const App = () => (
   <Admin
@@ -57,7 +61,12 @@ const App = () => (
       edit={ClassEdit}
       create={ClassCreate}
     />
-    {/* <Resource name="course" list={DynamicList} edit={DynamicEdit} /> */}
+    <Resource
+      name="course"
+      list={CourseList}
+      edit={CourseEdit}
+      create={CourseCreate}
+    />
   </Admin>
 );
 
