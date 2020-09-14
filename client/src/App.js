@@ -21,6 +21,10 @@ import DepartmentList from "./resources/department/department.list";
 import DepartmentEdit from "./resources/department/department.edit";
 import DepartmentCreate from "./resources/department/department.create";
 
+import ClassList from "./resources/class/class.list";
+import ClassEdit from "./resources/class/class.edit";
+import ClassCreate from "./resources/class/class.create";
+
 const dataProvider = jsonServerProvider("http://localhost:3001");
 const App = () => (
   <Admin
@@ -47,8 +51,13 @@ const App = () => (
       edit={DepartmentEdit}
       create={DepartmentCreate}
     />
-    {/* <Resource name="class" list={DynamicList} edit={DynamicEdit} />
-    <Resource name="course" list={DynamicList} edit={DynamicEdit} /> */}
+    <Resource
+      name="class"
+      list={ClassList}
+      edit={ClassEdit}
+      create={ClassCreate}
+    />
+    {/* <Resource name="course" list={DynamicList} edit={DynamicEdit} /> */}
   </Admin>
 );
 
